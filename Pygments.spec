@@ -5,11 +5,11 @@
 # Source0 file verified with key 0x0A5B101836580288 (georg@python.org)
 #
 Name     : Pygments
-Version  : 2.1.3
-Release  : 20
-URL      : https://pypi.python.org/packages/source/P/Pygments/Pygments-2.1.3.tar.gz
-Source0  : https://pypi.python.org/packages/source/P/Pygments/Pygments-2.1.3.tar.gz
-Source99 : https://pypi.python.org/packages/source/P/Pygments/Pygments-2.1.3.tar.gz.asc
+Version  : 2.2.0
+Release  : 21
+URL      : http://pypi.debian.net/Pygments/Pygments-2.2.0.tar.gz
+Source0  : http://pypi.debian.net/Pygments/Pygments-2.2.0.tar.gz
+Source99 : http://pypi.debian.net/Pygments/Pygments-2.2.0.tar.gz.asc
 Summary  : Pygments is a syntax highlighting package written in Python.
 Group    : Development/Tools
 License  : BSD-2-Clause
@@ -18,14 +18,9 @@ Requires: Pygments-python
 BuildRequires : nose
 BuildRequires : pbr
 BuildRequires : pip
-BuildRequires : pluggy
-BuildRequires : py-python
-BuildRequires : pytest
 BuildRequires : python-dev
 BuildRequires : python3-dev
 BuildRequires : setuptools
-BuildRequires : tox
-BuildRequires : virtualenv
 
 %description
 phpMyAdmin can manage a whole MySQL-server (needs a super-user) but
@@ -65,16 +60,16 @@ python components for the Pygments package.
 
 
 %prep
-%setup -q -n Pygments-2.1.3
+%setup -q -n Pygments-2.2.0
 
 %build
 export LANG=C
-export SOURCE_DATE_EPOCH=1484564417
+export SOURCE_DATE_EPOCH=1485747258
 python2 setup.py build -b py2
 python3 setup.py build -b py3
 
 %install
-export SOURCE_DATE_EPOCH=1484564417
+export SOURCE_DATE_EPOCH=1485747258
 rm -rf %{buildroot}
 python2 -tt setup.py build -b py2 install --root=%{buildroot} --force
 python3 -tt setup.py build -b py3 install --root=%{buildroot} --force
