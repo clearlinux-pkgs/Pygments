@@ -6,7 +6,7 @@
 #
 Name     : Pygments
 Version  : 2.2.0
-Release  : 23
+Release  : 24
 URL      : http://pypi.debian.net/Pygments/Pygments-2.2.0.tar.gz
 Source0  : http://pypi.debian.net/Pygments/Pygments-2.2.0.tar.gz
 Source99 : http://pypi.debian.net/Pygments/Pygments-2.2.0.tar.gz.asc
@@ -15,6 +15,7 @@ Group    : Development/Tools
 License  : BSD-2-Clause
 Requires: Pygments-bin
 Requires: Pygments-python
+BuildRequires : go
 BuildRequires : nose
 BuildRequires : pbr
 BuildRequires : pip
@@ -23,24 +24,12 @@ BuildRequires : python3-dev
 BuildRequires : setuptools
 
 %description
-phpMyAdmin can manage a whole MySQL-server (needs a super-user) but
-also a single database. To accomplish the latter you'll need a
-properly set up MySQL-user which can read/write only the desired
-database. It's up to you to look up the appropiate part in the MySQL
-manual. Currently phpMyAdmin can:
-  - create and drop databases
-  - create, copy, drop and alter tables
-  - delete, edit and add fields
-  - execute any SQL-statement, even batch-queries
-  - manage keys on fields
-  - load text files into tables
-  - create (*) and read dumps of tables
-  - export (*) and import data to CSV values
-  - administer multiple servers and single databases
-  - check referencial integrity
-  - create complex queries automatically connecting required tables
-  - create PDF graphics of your database layout
-  - communicate in more than 38 different languages
+~~~~~~~~
+        
+            Pygments is a syntax highlighting package written in Python.
+        
+            It is a generic syntax highlighter suitable for use in code hosting, forums,
+            wikis or other applications that need to prettify source code.  Highlights
 
 %package bin
 Summary: bin components for the Pygments package.
@@ -63,16 +52,22 @@ python components for the Pygments package.
 %setup -q -n Pygments-2.2.0
 
 %build
+export http_proxy=http://127.0.0.1:9/
+export https_proxy=http://127.0.0.1:9/
+export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1489338860
+export SOURCE_DATE_EPOCH=1503074365
 python2 setup.py build -b py2
 python3 setup.py build -b py3
 
 %install
-export SOURCE_DATE_EPOCH=1489338860
+export SOURCE_DATE_EPOCH=1503074365
 rm -rf %{buildroot}
 python2 -tt setup.py build -b py2 install --root=%{buildroot} --force
 python3 -tt setup.py build -b py3 install --root=%{buildroot} --force
+echo ----[ mark ]----
+cat %{buildroot}/usr/lib/python3*/site-packages/*/requires.txt || :
+echo ----[ mark ]----
 
 %files
 %defattr(-,root,root,-)
@@ -83,4 +78,5 @@ python3 -tt setup.py build -b py3 install --root=%{buildroot} --force
 
 %files python
 %defattr(-,root,root,-)
-/usr/lib/python*/*
+/usr/lib/python2*/*
+/usr/lib/python3*/*
