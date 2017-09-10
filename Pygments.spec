@@ -6,7 +6,7 @@
 #
 Name     : Pygments
 Version  : 2.2.0
-Release  : 24
+Release  : 25
 URL      : http://pypi.debian.net/Pygments/Pygments-2.2.0.tar.gz
 Source0  : http://pypi.debian.net/Pygments/Pygments-2.2.0.tar.gz
 Source99 : http://pypi.debian.net/Pygments/Pygments-2.2.0.tar.gz.asc
@@ -14,6 +14,7 @@ Summary  : Pygments is a syntax highlighting package written in Python.
 Group    : Development/Tools
 License  : BSD-2-Clause
 Requires: Pygments-bin
+Requires: Pygments-legacypython
 Requires: Pygments-python
 BuildRequires : go
 BuildRequires : nose
@@ -39,9 +40,18 @@ Group: Binaries
 bin components for the Pygments package.
 
 
+%package legacypython
+Summary: legacypython components for the Pygments package.
+Group: Default
+
+%description legacypython
+legacypython components for the Pygments package.
+
+
 %package python
 Summary: python components for the Pygments package.
 Group: Default
+Requires: Pygments-legacypython
 Provides: pygments-python
 
 %description python
@@ -56,12 +66,12 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1503074365
+export SOURCE_DATE_EPOCH=1505057341
 python2 setup.py build -b py2
 python3 setup.py build -b py3
 
 %install
-export SOURCE_DATE_EPOCH=1503074365
+export SOURCE_DATE_EPOCH=1505057341
 rm -rf %{buildroot}
 python2 -tt setup.py build -b py2 install --root=%{buildroot} --force
 python3 -tt setup.py build -b py3 install --root=%{buildroot} --force
@@ -76,7 +86,10 @@ echo ----[ mark ]----
 %defattr(-,root,root,-)
 /usr/bin/pygmentize
 
-%files python
+%files legacypython
 %defattr(-,root,root,-)
 /usr/lib/python2*/*
+
+%files python
+%defattr(-,root,root,-)
 /usr/lib/python3*/*
