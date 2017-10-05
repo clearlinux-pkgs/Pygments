@@ -3,7 +3,6 @@ Keras
 Sphinx
 Theano
 bash_kernel
-cc-oci-runtime
 compat-llvm-soname4
 cppcheck
 darktable
