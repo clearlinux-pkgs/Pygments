@@ -1,9 +1,12 @@
 # This file contains recursive sources that require this package
+Cheetah
 Cython
 Keras
 Keras_Applications
 Keras_Preprocessing
+Markdown
 PyWavelets
+PyYAML
 R-fastcluster
 Sphinx
 Theano
@@ -28,6 +31,7 @@ jupyter_client
 jupyterlab
 jupyterlab_launcher
 libdnf
+libstoragemgmt
 llvm
 matplotlib
 nbsphinx
@@ -38,6 +42,7 @@ numpydoc
 opencv
 pandas
 prompt_toolkit
+pyaml
 pytest-cov
 pyzmq
 satyr
