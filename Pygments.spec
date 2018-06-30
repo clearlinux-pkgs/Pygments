@@ -6,7 +6,7 @@
 #
 Name     : Pygments
 Version  : 2.2.0
-Release  : 39
+Release  : 40
 URL      : http://pypi.debian.net/Pygments/Pygments-2.2.0.tar.gz
 Source0  : http://pypi.debian.net/Pygments/Pygments-2.2.0.tar.gz
 Source99 : http://pypi.debian.net/Pygments/Pygments-2.2.0.tar.gz.asc
@@ -15,14 +15,19 @@ Group    : Development/Tools
 License  : BSD-2-Clause
 Requires: Pygments-bin
 Requires: Pygments-python3
+Requires: Pygments-license
 Requires: Pygments-python
 BuildRequires : go
 BuildRequires : nose
 BuildRequires : pbr
 BuildRequires : pip
-
+BuildRequires : python-core
+BuildRequires : python3-core
 BuildRequires : python3-dev
+BuildRequires : qtbase-dev
+BuildRequires : qtbase-extras
 BuildRequires : setuptools
+BuildRequires : setuptools-legacypython
 
 %description
 ~~~~~~~~
@@ -35,6 +40,7 @@ BuildRequires : setuptools
 %package bin
 Summary: bin components for the Pygments package.
 Group: Binaries
+Requires: Pygments-license
 
 %description bin
 bin components for the Pygments package.
@@ -47,6 +53,14 @@ Requires: python-core
 
 %description legacypython
 legacypython components for the Pygments package.
+
+
+%package license
+Summary: license components for the Pygments package.
+Group: Default
+
+%description license
+license components for the Pygments package.
 
 
 %package python
@@ -76,13 +90,15 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1519344962
+export SOURCE_DATE_EPOCH=1530376308
 python2 setup.py build -b py2
 python3 setup.py build -b py3
 
 %install
-export SOURCE_DATE_EPOCH=1519344962
+export SOURCE_DATE_EPOCH=1530376308
 rm -rf %{buildroot}
+mkdir -p %{buildroot}/usr/share/doc/Pygments
+cp LICENSE %{buildroot}/usr/share/doc/Pygments/LICENSE
 python2 -tt setup.py build -b py2 install --root=%{buildroot} --force
 python3 -tt setup.py build -b py3 install --root=%{buildroot} --force
 echo ----[ mark ]----
@@ -99,6 +115,10 @@ echo ----[ mark ]----
 %files legacypython
 %defattr(-,root,root,-)
 /usr/lib/python2*/*
+
+%files license
+%defattr(-,root,root,-)
+/usr/share/doc/Pygments/LICENSE
 
 %files python
 %defattr(-,root,root,-)
