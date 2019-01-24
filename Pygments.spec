@@ -6,7 +6,7 @@
 #
 Name     : Pygments
 Version  : 2.2.0
-Release  : 46
+Release  : 47
 URL      : http://pypi.debian.net/Pygments/Pygments-2.2.0.tar.gz
 Source0  : http://pypi.debian.net/Pygments/Pygments-2.2.0.tar.gz
 Source99 : http://pypi.debian.net/Pygments/Pygments-2.2.0.tar.gz.asc
