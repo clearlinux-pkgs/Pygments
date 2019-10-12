@@ -1,10 +1,13 @@
 # This file contains recursive sources that require this package
 Sphinx
 WSME
+barbican
+cgit
 cppcheck
-deprecated-Sphinx
-gabbi
+gtk-doc
 ipython
 jarn.viewdoc
+mercurial
 nbconvert
 prompt_toolkit
+qtconsole

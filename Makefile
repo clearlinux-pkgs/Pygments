@@ -1,5 +1,5 @@
 PKG_NAME := Pygments
-URL = http://pypi.debian.net/Pygments/Pygments-2.2.0.tar.gz
+URL = https://files.pythonhosted.org/packages/7e/ae/26808275fc76bf2832deb10d3a3ed3107bc4de01b85dcccbe525f2cd6d1e/Pygments-2.4.2.tar.gz
 ARCHIVES = 
 
 include ../common/Makefile.common
