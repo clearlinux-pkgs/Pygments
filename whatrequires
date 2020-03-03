@@ -5,6 +5,7 @@ barbican
 cgit
 cppcheck
 gtk-doc
+hugo
 ipython
 jarn.viewdoc
 mercurial
@@ -12,3 +13,4 @@ nbconvert
 prompt_toolkit
 pyroma
 qtconsole
+spyder-ide
