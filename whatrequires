@@ -13,4 +13,5 @@ nbconvert
 prompt_toolkit
 pyroma
 qtconsole
+readme_renderer
 spyder-ide

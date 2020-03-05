@@ -4,7 +4,7 @@
 #
 Name     : Pygments
 Version  : 2.5.2
-Release  : 57
+Release  : 58
 URL      : https://files.pythonhosted.org/packages/cb/9f/27d4844ac5bf158a33900dbad7985951e2910397998e85712da03ce125f0/Pygments-2.5.2.tar.gz
 Source0  : https://files.pythonhosted.org/packages/cb/9f/27d4844ac5bf158a33900dbad7985951e2910397998e85712da03ce125f0/Pygments-2.5.2.tar.gz
 Summary  : Pygments is a syntax highlighting package written in Python.
@@ -31,22 +31,12 @@ BuildRequires : virtualenv
 
 %description
 Pygments
-~~~~~~~~
-
-Pygments is a syntax highlighting package written in Python.
-
-It is a generic syntax highlighter suitable for use in code hosting, forums,
-wikis or other applications that need to prettify source code.  Highlights
-are:
-
-* a wide range of over 300 languages and other text formats is supported
-* special attention is paid to details, increasing quality by a fair amount
-* support for new languages and formats are added easily
-* a number of output formats, presently HTML, LaTeX, RTF, SVG, all image     formats that PIL supports and ANSI sequences
-* it is usable as a command-line tool and as a library
-
-:copyright: Copyright 2006-2019 by the Pygments team, see AUTHORS.
-:license: BSD, see LICENSE for details.
+        ~~~~~~~~
+        
+        Pygments is a syntax highlighting package written in Python.
+        
+        It is a generic syntax highlighter suitable for use in code hosting, forums,
+        wikis or other applications that need to prettify source code.  Highlights
 
 %package bin
 Summary: bin components for the Pygments package.
@@ -79,7 +69,7 @@ python components for the Pygments package.
 Summary: python3 components for the Pygments package.
 Group: Default
 Requires: python3-core
-Provides: pypi(Pygments)
+Provides: pypi(pygments)
 
 %description python3
 python3 components for the Pygments package.
@@ -94,8 +84,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1583206917
-# -Werror is for werrorists
+export SOURCE_DATE_EPOCH=1583451959
 export GCC_IGNORE_WERROR=1
 export CFLAGS="$CFLAGS -fno-lto "
 export FCFLAGS="$CFLAGS -fno-lto "
