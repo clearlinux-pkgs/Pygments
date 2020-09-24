@@ -4,7 +4,7 @@
 #
 Name     : Pygments
 Version  : 2.7.1
-Release  : 61
+Release  : 62
 URL      : https://files.pythonhosted.org/packages/e2/07/25bd93c9c0175adfa5fb1513a20b25e7dd6c9a67c155e19b11b5f3662104/Pygments-2.7.1.tar.gz
 Source0  : https://files.pythonhosted.org/packages/e2/07/25bd93c9c0175adfa5fb1513a20b25e7dd6c9a67c155e19b11b5f3662104/Pygments-2.7.1.tar.gz
 Summary  : Pygments is a syntax highlighting package written in Python.
