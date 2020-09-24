@@ -1,13 +1,13 @@
 # This file contains recursive sources that require this package
 Sphinx
 WSME
-barbican
 cgit
 cppcheck
 gtk-doc
 hugo
 ipython
 jarn.viewdoc
+knack
 mercurial
 nbconvert
 prompt_toolkit
