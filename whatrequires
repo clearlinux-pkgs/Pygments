@@ -1,12 +1,11 @@
 # This file contains recursive sources that require this package
 Sphinx
-WSME
 cgit
 cppcheck
 gtk-doc
-hugo
 ipython
 jarn.viewdoc
+jupyterlab_pygments
 knack
 mercurial
 nbconvert
