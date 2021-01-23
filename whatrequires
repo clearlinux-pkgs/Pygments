@@ -5,6 +5,7 @@ cppcheck
 gtk-doc
 ipython
 jarn.viewdoc
+jupyter_console
 jupyterlab_pygments
 knack
 mercurial
