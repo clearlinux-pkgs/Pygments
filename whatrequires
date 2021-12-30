@@ -1,17 +1,13 @@
 # This file contains recursive sources that require this package
 Sphinx
 cgit
-cppcheck
 gtk-doc
+httpx
 ipython
 jarn.viewdoc
 jupyter_console
 jupyterlab_pygments
 knack
 mercurial
-nbconvert
 prompt_toolkit
 pyroma
-qtconsole
-readme_renderer
-spyder-ide
